@@ -7,18 +7,13 @@ while(True):
 
     if(temp == ''): break
 
-
     lista = [];
     for i in temp.split(' '):
-        print(lista)
-
-        if(i.isnumeric()):
-            lista.append(i)
-        else:
-            print("Dane zostały źle wprowadzone! Proszę spróbować jeszcze raz.")
-            continue
         
-
-
+        try:
+            lista.append(int(i))
+        except:
+            continue
+    
     result = naive(lista)
     print(result)
